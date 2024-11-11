@@ -7,7 +7,7 @@
         <?php
         echo '<p>Hello World</p>';
         $ip = "";
-        $which_ip = ""
+        $which_ip = "";
         if (isset($_SERVER['http_cf_connecting_ip'])) { // Cloudflare対応
             $ip = $_SERVER['http_cf_connecting_ip'];
             $which_ip = "http_cf_connectiong_ip";
