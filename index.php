@@ -22,6 +22,14 @@
                     $ip = $_SERVER['http_x_forwarded_for'];
                     $which_ip = "http_x_forwarded_for";
                 }
+            } elseif ( preg_match('/^(169)\.(254)\.(129)\.[0-9]+$/', $ip) ) {
+                if (isset($_SERVER['HTTP_X_REAL_IP'])) {
+                    $ip = $_SERVER['HTTP_X_REAL_IP'];
+                    $which_ip = "HTTP_X_REAL_IP";
+                } elseif (isset($_SERVER['http_x_forwarded_for'])) {
+                    $ip = $_SERVER['http_x_forwarded_for'];
+                    $which_ip = "http_x_forwarded_for";
+                }
             }
         } else {
             $ip = "127.0.0.1";
