@@ -35,10 +35,10 @@
             $ip = "127.0.0.1";
             $which_ip = "loopback0";
         }
-        echo $which_ip."<br>";
-        echo "=========<br>";
+        //echo $which_ip."<br>";
         $output = <<<EOL
         <pre>
+        =========<br>
         REMOTE_ADDR              : {$_SERVER['REMOTE_ADDR']}
         HTTP_X_FORWARDED_FOR     : {$_SERVER['HTTP_X_FORWARDED_FOR']}
         HTTP_CLIENT_IP           : {$_SERVER['HTTP_CLIENT_IP']}
@@ -46,7 +46,7 @@
         HTTP_X_REAL_IP           : {$_SERVER['HTTP_X_REAL_IP']}
         HTTP_X_REAL_FORWARDED_FOR: {$_SERVER['HTTP_X_REAL_FORWARDED_FOR']}
 EOL;
-        echo $output;
+        //echo $output;
         echo "<br>=========<br>";
         
         if( str_contains($ip,":")){
@@ -63,8 +63,8 @@ EOL;
         }else{
             $country_name = $json_arr["country_name"];
             $country_code = $json_arr["country_code2"];
-            echo "<p>【$ip】 your country is $country_name($country_code)</p>";
-            var_dump($json_arr);
+            echo "<p>【".$ip."】 your country is $country_name($country_code)</p>";
+            //var_dump($json_arr);
         }
         ?>
     </body>
