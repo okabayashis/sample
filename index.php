@@ -29,7 +29,7 @@
             $country_name = $json_arr["country_name"];
             $country_code = $json_arr["country_code2"];
             echo "<p>your country is $country_name($country_code)</p>";
-            //var_dump($json_arr);
+            var_dump($json_arr);
         }
         ?>
     </body>
