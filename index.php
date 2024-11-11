@@ -6,7 +6,7 @@
     <body>
         <?php
         echo '<p>Hello World</p>';
-        $ip = "127.0.0.1";
+        $ip = "";
         if (isset($_SERVER['http_cf_connecting_ip'])) { // Cloudflare対応
             $ip = $_SERVER['http_cf_connecting_ip'];
         } elseif (isset($_SERVER['REMOTE_ADDR']) === true) {
@@ -18,7 +18,9 @@
                     $ip = $_SERVER['http_x_forwarded_for'];
                 }
             }
-        } 
+        } else {
+            $ip = "127.0.0.1";
+        }
         $url = "https://api.iplocation.net/?ip=".$ip;
         $json = mb_convert_encoding(file_get_contents($url), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
         $json_arr = json_decode($json,true);
