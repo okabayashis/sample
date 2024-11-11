@@ -27,6 +27,7 @@
             $ip = "127.0.0.1";
             $which_ip = "loopback0";
         }
+        echo $which_ip;
         $url = "https://api.iplocation.net/?ip=".$ip;
         $json = mb_convert_encoding(file_get_contents($url), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
         $json_arr = json_decode($json,true);
