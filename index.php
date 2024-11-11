@@ -38,14 +38,15 @@
         //echo $which_ip."<br>";
         $output = <<<EOL
         <pre>
-        =========<br>
+        =========
         REMOTE_ADDR              : {$_SERVER['REMOTE_ADDR']}
         HTTP_X_FORWARDED_FOR     : {$_SERVER['HTTP_X_FORWARDED_FOR']}
         HTTP_CLIENT_IP           : {$_SERVER['HTTP_CLIENT_IP']}
         HTTP_CLIENTADDRESS       : {$_SERVER['HTTP_CLIENTADDRESS']}
         HTTP_X_REAL_IP           : {$_SERVER['HTTP_X_REAL_IP']}
         HTTP_X_REAL_FORWARDED_FOR: {$_SERVER['HTTP_X_REAL_FORWARDED_FOR']}
-        <br>=========<br></pre>
+        =========
+        </pre>
 EOL;
         echo $output;
         if( str_contains($ip,":")){
