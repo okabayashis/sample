@@ -51,7 +51,7 @@ EOL;
         
         if( str_contains($ip,":")){
             $ip_array = explode(':',$ip);
-            $ip = $ip_array[1];
+            $ip = $ip_array[0];
         }
         
         $url = "https://api.iplocation.net/?ip=".$ip;
