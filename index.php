@@ -48,6 +48,12 @@
 EOL;
         echo $output;
         echo "<br>=========<br>";
+        
+        if( str_contains($ip,":")){
+            $ip_array = explode(':',$ip);
+            $ip = $ip_array[1];
+        }
+        
         $url = "https://api.iplocation.net/?ip=".$ip;
         $json = mb_convert_encoding(file_get_contents($url), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
         $json_arr = json_decode($json,true);
