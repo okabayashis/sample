@@ -28,7 +28,7 @@
             $which_ip = "loopback0";
         }
         echo $which_ip;
-        echo "=========<br>"
+        echo "=========<br>";
         $output = <<<EOL
         <pre>
         REMOTE_ADDR              : {$_SERVER['REMOTE_ADDR']}
@@ -38,7 +38,7 @@
         HTTP_X_REAL_IP           : {$_SERVER['HTTP_X_REAL_IP']}
         HTTP_X_REAL_FORWARDED_FOR: {$_SERVER['HTTP_X_REAL_FORWARDED_FOR']}
 EOL;
-        echo "=========<br>"
+        echo "=========<br>";
         $url = "https://api.iplocation.net/?ip=".$ip;
         $json = mb_convert_encoding(file_get_contents($url), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
         $json_arr = json_decode($json,true);
