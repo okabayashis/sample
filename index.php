@@ -45,10 +45,9 @@
         HTTP_CLIENTADDRESS       : {$_SERVER['HTTP_CLIENTADDRESS']}
         HTTP_X_REAL_IP           : {$_SERVER['HTTP_X_REAL_IP']}
         HTTP_X_REAL_FORWARDED_FOR: {$_SERVER['HTTP_X_REAL_FORWARDED_FOR']}
+        <br>=========<br></pre>
 EOL;
-        //echo $output;
-        echo "<br>=========<br>";
-        
+        echo $output;
         if( str_contains($ip,":")){
             $ip_array = explode(':',$ip);
             $ip = $ip_array[0];
